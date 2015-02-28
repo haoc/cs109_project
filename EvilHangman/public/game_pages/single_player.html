@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Single Player Evil HangMan</title>
+        <link rel="stylesheet" href="../stylesheets/main.css">
+        
+    <script>
+        for(var i=1; i<=29; i++){
+            var select = document.getElementById("length");
+            var option = document.createElement("OPTION");
+            select.options.add(option);
+            option.text = i;
+            option.value = i;
+        }
+    </script>
+    </head>
+    
+    <body id="gradient">
+        <h1 class="center">Single Player</h1>
+        <div id="down" class="center">
+            <p >Word Size</p>
+            
+
+            
+            
+            <select id="length">
+            </select>
+            
+            <p id="down2">Number of Guesses</p>
+            <form>
+                <input type="text" value="5">
+            </form>
+            
+        </div>
+    </body>
+
+</html>

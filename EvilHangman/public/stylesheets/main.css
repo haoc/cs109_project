@@ -1,0 +1,98 @@
+#gradient {
+    background: #00BFFF;
+    
+    background: -webkit-linear-gradient(to right bottom, #086A87, #00BFFF);
+    background: linear-gradient(to right bottom, #086A87, #00BFFF);
+    border-radius: 2px;
+    height: 780px;
+}
+
+#img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 150px;
+}
+
+#single_button {
+
+/*
+   position:absolute; 
+   margin-left: -100px;
+   left:50%;
+*/
+   width:150px;
+   bottom:200px;
+}
+/*
+
+.float_buttons {
+    float: left;
+    margin-right: 5px;
+}
+
+#left{
+    float:left;
+    margin-right: 10px;
+}
+
+#right{
+    float: right;
+    margin-left: 10px;
+}*/
+#multi_button {
+    margin-top: 50px;
+}
+
+
+
+.buttons {
+/*
+    margin: 0, auto;
+    width: 150px;
+*/
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    bottom: -150px;
+    display:block;
+    text-align:center;
+    width: 120px;
+    height: 45px;
+}
+
+.center {
+    position: relative;
+    display: block;
+/*
+    margin-left: auto;
+    margin-right: auto;
+*/
+    left: 40%;
+    top: 30%;
+    width: 180x;
+    
+}
+
+#down {
+    position: absolute;
+    margin-bottom: 100px;
+    top: 400px;.
+}
+
+#down2 {
+    position: relative;
+    margin-top: 50px;
+}
+
+#float {
+/*    float: right;*/
+    position: absolute;
+/*
+    right: -30px;
+    top: -60x;
+*/
+    margin-left: 150%;
+    margin-top: -26%;
+}
+
