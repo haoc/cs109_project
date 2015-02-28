@@ -40,13 +40,10 @@ function Dictionary()
         if((withoutLetter.length*1.0)/(wordCount()*1.0) > .5)
         {
         	dictionary = withoutLetter;
-        	console.log("ended early");
         }
         else
         {
-        	console.log("before method call");
         	var allPossibilities = possibilities(letter, withLetter);
-        	console.log("after method call");
         	console.log(allPossibilities);
             var index = 0;
             var max = 0;
@@ -83,11 +80,9 @@ function Dictionary()
     	{
     		if(array[x] != undefined)
     		{
-    			console.log("word is: "array[x]);
     			return x;
     		}
     	}
-    	console.log("out of permutations");
     	return -1;
     }
     function possibilities(letter, wordPool)
@@ -110,6 +105,7 @@ function Dictionary()
 	            }
 	        }
 	        allPossibilities.push(matching);
+            firstWordIndex = firstDefined(wordPool);
         }
         return allPossibilities;
     }
