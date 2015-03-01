@@ -3,20 +3,48 @@
     <head>
         <title>Multiplayer Evil HangMan</title>
         <link rel="stylesheet" href="../stylesheets/main.css">
-        
-    <script>
-        for(var i=1; i<=29; i++){
-            var select = document.getElementById("length");
-            var option = document.createElement("OPTION");
-            select.options.add(option);
-            option.text = i;
-            option.value = i;
-        }
-    </script>
+        <script type="text/javascript" src="../assets/main.js"></script>
+    
     </head>
     
     <body id="gradient">
         <h1 class="center">Multiplayer</h1>
+        <div id="down" class="center">
+            <p>Guesser?</p>
+            <select>
+                <option>Yes</option>
+                <option>No</option>
+            </select>
+            
+            <p>Word Size</p>
+
+            <select id="diffList" onchange="window.changeList()">
+                <option value="">-- Difficulty --</option>
+                <option value="1">Easy</option>
+                <option value="2">Medium</option>
+                <option value="3">Hard</option>
+
+            </select>
+
+                <select id="numbList"></select>
+
+
+            <p id="down2">Number of Guesses</p>
+            <form >
+                <input id="guess_form" type="text" value="5">
+            </form>
+
+            <p>Open Rooms</p>
+            <select>
+                <option>Room 1</option>
+                <option>Room 2</option>
+                <option>Room 3</option>
+            </select>
+            
+            <br><br>
+            <button class="button submit" onclick="location.href='../index.html'">Submit</button>
+            
+        </div>
     </body>
 
 </html>

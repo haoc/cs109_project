@@ -1,7 +1,7 @@
 <html>
 
 <head>
-	
+	<title>Evil HangMan</title>
 	<!-- JQuery -->
 	<script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
 	<script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
@@ -15,54 +15,65 @@
 	<!-- Latest compiled and minified JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 	
+    <!--    stylesheets-->
+    <link rel="stylesheet" href="stylesheets/main.css">
+    
+    
+    <script src="assets/main.js"></script>
 	<script src="Dictionary.js"></script>
 	
+    
 </head>
 
-<body>
+<body id="gradient">
 	
-	<h1>Evil Hangman</h1> 
+	<div id="title">Evil Hangman</div> 
+    <div id="down" class="center">
+    
+        <div id="word"></div>
+        <div id="guesses"></div>
+
+        <br>
+        <!-- <button id="dictionary">dictionary</button> <br> -->
+        <button id="qButton">Q</button> &nbsp;
+        <button id="wButton">W</button> &nbsp;
+        <button id="eButton">E</button> &nbsp;
+        <button id="rButton">R</button> &nbsp;
+        <button id="tButton">T</button> &nbsp;
+        <button id="yButton">Y</button> &nbsp;
+        <button id="uButton">U</button> &nbsp;
+        <button id="iButton">I&nbsp;</button> &nbsp;
+        <button id="oButton">O</button> &nbsp;
+        <button id="pButton">P</button> <br>
+
+        &nbsp;  &nbsp;  &nbsp;<button id="aButton">A</button> &nbsp;
+        <button id="sButton">S</button> &nbsp;
+        <button id="dButton">D</button> &nbsp;
+        <button id="fButton">F</button> &nbsp;
+        <button id="gButton">G</button> &nbsp;
+        <button id="hButton">H</button> &nbsp;
+        <button id="jButton">J</button> &nbsp;
+        <button id="kButton">K</button> &nbsp;
+        <button id="lButton">L</button> <br>
+
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+        <button id="zButton">Z</button> &nbsp;
+        <button id="xButton">X</button> &nbsp;
+        <button id="cButton">C</button> &nbsp;
+        <button id="vButton">V</button> &nbsp;
+        <button id="bButton">B</button> &nbsp;
+        <button id="nButton">N</button> &nbsp;
+        <button id="mButton">M</button> <br>
+
+
+        <!-- <input type="checkbox" name="checkbox" value="Milk"></input> -->
 	
-	<p>testing 1 2 3</p>
-
-	<div id="word"></div>
-	<div id="guesses"></div>
-	
-	<br>
-	<!-- <button id="dictionary">dictionary</button> <br> -->
-	<button id="qButton">Q</button> &nbsp;
-	<button id="wButton">W</button> &nbsp;
-	<button id="eButton">E</button> &nbsp;
-	<button id="rButton">R</button> &nbsp;
-	<button id="tButton">T</button> &nbsp;
-	<button id="yButton">Y</button> &nbsp;
-	<button id="uButton">U</button> &nbsp;
-	<button id="iButton">I&nbsp;</button> &nbsp;
-	<button id="oButton">O</button> &nbsp;
-	<button id="pButton">P</button> <br>
-
-	&nbsp;  &nbsp;  &nbsp;<button id="aButton">A</button> &nbsp;
-	<button id="sButton">S</button> &nbsp;
-	<button id="dButton">D</button> &nbsp;
-	<button id="fButton">F</button> &nbsp;
-	<button id="gButton">G</button> &nbsp;
-	<button id="hButton">H</button> &nbsp;
-	<button id="jButton">J</button> &nbsp;
-	<button id="kButton">K</button> &nbsp;
-	<button id="lButton">L</button> <br>
-
-	&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-	<button id="zButton">Z</button> &nbsp;
-	<button id="xButton">X</button> &nbsp;
-	<button id="cButton">C</button> &nbsp;
-	<button id="vButton">V</button> &nbsp;
-	<button id="bButton">B</button> &nbsp;
-	<button id="nButton">N</button> &nbsp;
-	<button id="mButton">M</button> <br>
+        <button id="down" class="button submit" onclick="confirmation()" value="Return to menu">Menu</button>
+    
+    
+    </div>
 
 
-	<!-- <input type="checkbox" name="checkbox" value="Milk"></input> -->
-	
 
 </body>
 

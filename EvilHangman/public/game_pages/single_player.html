@@ -1,37 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        
         <title>Single Player Evil HangMan</title>
         <link rel="stylesheet" href="../stylesheets/main.css">
+        <script type="text/javascript" src="../assets/main.js"></script>
         
-    <script>
-        for(var i=1; i<=29; i++){
-            var select = document.getElementById("length");
-            var option = document.createElement("OPTION");
-            select.options.add(option);
-            option.text = i;
-            option.value = i;
-        }
-    </script>
     </head>
-    
+<!--    <body>-->
     <body id="gradient">
         <h1 class="center">Single Player</h1>
         <div id="down" class="center">
+
             <p >Word Size</p>
             
+<!--            main.js range of numbers, not working-->
+            <select id="diffList" onchange="window.changeList()">
+                <option value="">-- Difficulty --</option>
+                <option value="1">Easy</option>
+                <option value="2">Medium</option>
+                <option value="3">Hard</option>
 
-            
-            
-            <select id="length">
             </select>
             
-            <p id="down2">Number of Guesses</p>
-            <form>
-                <input type="text" value="5">
-            </form>
+            <select id="numbList"></select>
             
+            <p id="down2">Number of Guesses</p>
+            <form >
+                <input id="guess_form" type="text" value="5">
+            </form>
+            <br><br>
+            <button class="button submit" onclick="location.href='../index.html'">Submit</button>
         </div>
+        
+
     </body>
 
 </html>
