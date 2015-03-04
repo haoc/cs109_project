@@ -187,17 +187,23 @@ function Dictionary()
             	console.log(array[x]);
         }
     }
+    function reconOne()
+    {
+        return dictionary.length === 1;
+    }
 
     return {
     	wordSize: wordSize,
 	    guessLetter: guessLetter,
 	    print: print,
-	    printArray: printArray
+	    printArray: printArray,
+        reconOne: reconOne
 	};
 }
 
 
 $(document).ready(function() {
+    var gameOver = false;
     var gameDictionary = new Dictionary();
     var wordLength = 8;
     gameDictionary.wordSize(wordLength);
@@ -206,171 +212,122 @@ $(document).ready(function() {
     var numGuessesToLose = 10;
     var wordToGuess = wordToString(false);
 
+    var keyList = {'q':0, 'w':0, 'e':0, 'r':0, 't':0, 'y':0, 'u':0, 'i':0, 'o':0, 'p':0, 
+                   'a':0, 's':0, 'd':0, 'f':0, 'g':0, 'h':0, 'j':0, 'k':0, 'l':0, 
+                   'z':0, 'x':0, 'c':0, 'v':0, 'b':0, 'n':0, 'm':0};
     $("#guesses").html("Guesses Left: " + (numGuessesToLose - numGuesses));
 
 
     gameDictionary.wordSize(8);
     var result = {};
-    console.log(result);
-    $('#qButton').click(function(){ 
-        if(!guesses[0])
-        result = gameDictionary.guessLetter('q');
-        guesses[0] = true;
-        check(result);
+
+    $('#qButton').click(function(){
+        $(this).css('color','red');
+        guessEvent(this, $(this).html()[0].toLowerCase());
     });
     $('#wButton').click(function(){
-        if(!guesses[1])
-        result = gameDictionary.guessLetter('w');
-        guesses[1] = true;
-        check(result);
+        $(this).css('color','red');
+        guessEvent(this, $(this).html()[0].toLowerCase());
     });
     $('#eButton').click(function(){ 
-        if(!guesses[2])
-        result = gameDictionary.guessLetter('e');
-        guesses[2] = true;
-        check(result);
+        $(this).css('color','red');
+        guessEvent(this, $(this).html()[0].toLowerCase());
     });
     $('#rButton').click(function(){
-        if(!guesses[3])
-        result = gameDictionary.guessLetter('r');
-        guesses[3] = true;
-        check(result);
+        $(this).css('color','red');
+        guessEvent(this, $(this).html()[0].toLowerCase());
     });
     $('#tButton').click(function(){
-        if(!guesses[4])
-        result = gameDictionary.guessLetter('t');
-        guesses[4] = true;
-        check(result);
+        $(this).css('color','red');
+        guessEvent(this, $(this).html()[0].toLowerCase());
     });
     $('#yButton').click(function(){ 
-        if(!guesses[5])
-        result = gameDictionary.guessLetter('y');
-        guesses[5] = true;
-        check(result);
+        $(this).css('color','red');
+        guessEvent(this, $(this).html()[0].toLowerCase());
     });
     $('#uButton').click(function(){ 
-        if(!guesses[6])
-        result = gameDictionary.guessLetter('u');
-        guesses[6] = true;
-        check(result);
+        $(this).css('color','red');
+        guessEvent(this, $(this).html()[0].toLowerCase());
     });
     $('#iButton').click(function(){ 
-        if(!guesses[7])
-        result = gameDictionary.guessLetter('i');
-        guesses[7] = true;
-        check(result);
+        $(this).css('color','red');
+        guessEvent(this, $(this).html()[0].toLowerCase());
     });
     $('#oButton').click(function(){ 
-        if(!guesses[8])
-        result = gameDictionary.guessLetter('o');
-        guesses[8] = true;
-        check(result);
+        $(this).css('color','red');
+        guessEvent(this, $(this).html()[0].toLowerCase());
     });
     $('#pButton').click(function(){ 
-        if(!guesses[9])
-        result = gameDictionary.guessLetter('p');
-        guesses[9] = true;
-        check(result);
+        $(this).css('color','red');
+        guessEvent(this, $(this).html()[0].toLowerCase());
     });
 
 
     $('#aButton').click(function(){ 
-        if(!guesses[10])
-        result = result = gameDictionary.guessLetter('a');
-        guesses[10] = true;
-        check(result);
+        $(this).css('color','red');
+        guessEvent(this, $(this).html()[0].toLowerCase());
     });
     $('#sButton').click(function(){ 
-        if(!guesses[11])
-        result = gameDictionary.guessLetter('s');
-        guesses[11] = true;
-        check(result);
+        $(this).css('color','red');
+        guessEvent(this, $(this).html()[0].toLowerCase());
     });
     $('#dButton').click(function(){ 
-        if(!guesses[12])
-        result = gameDictionary.guessLetter('d');
-        guesses[12] = true;
-        check(result);
+        $(this).css('color','red');
+        guessEvent(this, $(this).html()[0].toLowerCase());
     });
     $('#fButton').click(function(){ 
-        if(!guesses[13])
-        result = gameDictionary.guessLetter('f');
-        guesses[13] = true;
-        check(result);
+        $(this).css('color','red');
+        guessEvent(this, $(this).html()[0].toLowerCase());
     });
     $('#gButton').click(function(){ 
-        if(!guesses[14])
-        result = gameDictionary.guessLetter('g');
-        guesses[14] = true;
-        check(result);
+        $(this).css('color','red');
+        guessEvent(this, $(this).html()[0].toLowerCase());
     });
     $('#hButton').click(function(){ 
-        if(!guesses[15])
-        result = gameDictionary.guessLetter('h');
-        guesses[15] = true;
-        check(result);
+        $(this).css('color','red');
+        guessEvent(this, $(this).html()[0].toLowerCase());
     });
     $('#jButton').click(function(){ 
-        if(!guesses[16])
-        result = gameDictionary.guessLetter('j');
-        guesses[16] = true;
-        check(result);
+        $(this).css('color','red');
+        guessEvent(this, $(this).html()[0].toLowerCase());
     });
     $('#kButton').click(function(){ 
-        if(!guesses[17])
-        result = gameDictionary.guessLetter('k');
-        guesses[17] = true;
-        check(result);
+        $(this).css('color','red');
+        guessEvent(this, $(this).html()[0].toLowerCase());
     });
     $('#lButton').click(function(){ 
-        if(!guesses[18])
-        result = gameDictionary.guessLetter('l');
-        guesses[18] = true;
-        check(result);
+        $(this).css('color','red');
+        guessEvent(this, $(this).html()[0].toLowerCase());
     });
 
 
     $('#zButton').click(function(){ 
-        if(!guesses[19])
-        result = gameDictionary.guessLetter('z');
-        guesses[19] = true;
-        check(result);
+        $(this).css('color','red');
+        guessEvent(this, $(this).html()[0].toLowerCase());
     });
     $('#xButton').click(function(){ 
-        if(!guesses[20])
-        result = gameDictionary.guessLetter('x');
-        guesses[20] = true;
-        check(result);
+        $(this).css('color','red');
+        guessEvent(this, $(this).html()[0].toLowerCase());
     });
     $('#cButton').click(function(){ 
-        if(!guesses[21])
-        result = gameDictionary.guessLetter('c');
-        guesses[21] = true;
-        check(result);
+        $(this).css('color','red');
+        guessEvent(this, $(this).html()[0].toLowerCase());
     });
     $('#vButton').click(function(){ 
-        if(!guesses[22])
-        result = gameDictionary.guessLetter('v');
-        guesses[22] = true;
-        check(result);
+        $(this).css('color','red');
+        guessEvent(this, $(this).html()[0].toLowerCase());
     });
     $('#bButton').click(function(){ 
-        if(!guesses[23])
-        result = gameDictionary.guessLetter('b');
-        guesses[23] = true;
-        check(result);
+        $(this).css('color','red');
+        guessEvent(this, $(this).html()[0].toLowerCase());
     });
     $('#nButton').click(function(){ 
-        if(!guesses[24])
-        result = gameDictionary.guessLetter('n');
-        guesses[24] = true;
-        check(result);
+        $(this).css('color','red');
+        guessEvent(this, $(this).html()[0].toLowerCase());
     });
     $('#mButton').click(function(){ 
-        if(!guesses[25])
-        result = gameDictionary.guessLetter('m');
-        guesses[25] = true;
-        check(result);
+        $(this).css('color','red');
+        guessEvent(this, $(this).html()[0].toLowerCase());
     });
     
     function check(result)
@@ -378,12 +335,22 @@ $(document).ready(function() {
         if(result === false)
         {
             guessesToString(false);
-            //Check IF LOST
+            if((numGuessesToLose - numGuesses) <= 0)
+            {
+                alert("YOU SUCK");
+                gameOver = true;
+            }
         }
         else
         {
             wordToString(true, result.array, result.letter);
-            //CHECK IF WON
+            /*if(gameDictionary.length === 1)
+            {
+                alert("YOU WIN");
+                gameOver = true;
+            }
+            else*/
+                console.log(gameDictionary.reconOne());
         }
     }
     function wordToString(initialized, array, letter)
@@ -435,11 +402,24 @@ $(document).ready(function() {
         }
         return array;
     }
+    function guessEvent(evt,guessedLetter)
+    {
+        if(!gameOver)
+        {
+            if(!keyList[guessedLetter])
+            {
+                result = gameDictionary.guessLetter(guessedLetter);
+                check(result);
+                keyList[guessedLetter] = 1;
+            }
+            else
+                console.log("happend before");
+        }
 
 
-
-
+    }
 });
+
 
 
 
@@ -449,8 +429,5 @@ function getDictionary()
 {
 	return ["aa", "aah", "aahed", "aahing", "aahs", "aal", "aalii", "aaliis", "aals", "aardvark", "aardvarks", 
 	"aardwolf", "aardwolves", "aargh", "aas", "aasvogel", "aasvogels", "aba", "abaca", "abacas", "abaci", 
-	"aback", "abacus", "abacuses", "abaft", "abaka", "abakas", "abalone", "abalones", "abamp", "abampere", 
-	"abamperes", "abamps", "abandon", "abandoned", "abandoning", "abandonment", "abandonments", "abandons", 
-	"abas", "abase", "abased", "abasedly", "abasement", "abasements", "abaser", "abasers", "abases", 
-	"abash", "abashed", "abashes"];
+	"aback", "abacus"];
 }
