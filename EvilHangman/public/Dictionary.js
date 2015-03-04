@@ -187,9 +187,22 @@ function Dictionary()
             	console.log(array[x]);
         }
     }
-    function reconOne()
+    function reconOne(keyList)
     {
-        return dictionary.length === 1;
+        if(dictionary.length === 1)
+        {
+            var word = dictionary[0];
+            for(var x = 0; x < word.length; x++)
+            {
+                console.log(word);
+                if(!keyList[word[x]])
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+        return false;
     }
 
     return {
@@ -344,13 +357,11 @@ $(document).ready(function() {
         else
         {
             wordToString(true, result.array, result.letter);
-            /*if(gameDictionary.length === 1)
+            if(gameDictionary.reconOne(keyList))
             {
                 alert("YOU WIN");
                 gameOver = true;
             }
-            else*/
-                console.log(gameDictionary.reconOne());
         }
     }
     function wordToString(initialized, array, letter)
@@ -408,9 +419,9 @@ $(document).ready(function() {
         {
             if(!keyList[guessedLetter])
             {
+                keyList[guessedLetter] = 1;
                 result = gameDictionary.guessLetter(guessedLetter);
                 check(result);
-                keyList[guessedLetter] = 1;
             }
             else
                 console.log("happend before");
