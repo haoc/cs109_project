@@ -1,65 +1,88 @@
-    body{
-          width: 100%;
-          height: 100%;
-          margin: 0;
-          padding: 0;
-    }
 
-#gradient {
+body {
     background: #00BFFF;
-    
     background: -webkit-linear-gradient(to right bottom, #086A87, #00BFFF);
     background: linear-gradient(to right bottom, #086A87, #00BFFF);
-    border-radius: 2px;
-    height: 795px;
+    height:100%;
+}
+
+#nav {
+	/*unused*/
+	line-height:30px;
+	background-color:#eeeeee;
+	height:300px;
+	width:100px;
+	float:left;
+	padding:5px; 
+}
+
+#footer {
+	background-color:#EEEEEE;
+	color:black;
+	clear:both;
+	text-align:center;
+	padding:1px; 
+	font-size: 8px;
 }
 
 #title {
-    position: absolute;
-/*
-    margin-left: auto;
-    margin-right: auto;
-*/
-    left: 45%;
-/*    right: 50%;*/
-    top: 50px;
-    width: 200px;
-    font-size: 30px;
+	background-color:#1E90FF;
+	color:white;
+	text-align:center;
+	width:100%;
+	padding:5px;
+}
+
+#header {
+   text-align:center;
+}
+
+#main {
+	padding:10px; 
+   text-align:center;
+}
+
+#word {
+   text-align:center;
+   font-size: 30px;
+}
+
+#guesses {
+   text-align:center;
+   font-size: 30px;
+}
+
+#keys {
+	background: #00BFFF;
+	width:400px;
+	margin-left: auto;
+	margin-right: auto;
+}
+#buttons {
+   
+}
+
+#down {
+   
+}
+
+#down2 {
+   
+}
+
+#guess_form{
     
 }
 
-#img{
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    position: relative;
-    top: 70px;
+.submit {
+    width: 100px;
+    height: 35px;
 }
-
-#single_button {
-
-   width:150px;
-   bottom:200px;
-}
-
-#multi_button {
-    margin-top: 50px;
-}
-
 
 
 .buttons {
-/*
-    margin: 0, auto;
-    width: 150px;
-*/
-    position: relative;
-    margin-left: auto;
-    margin-right: auto;
-    bottom: -150px;
-    display:block;
     text-align:center;
-    width: 120px;
+    width: 150px;
     height: 45px;
 }
 
@@ -74,27 +97,4 @@
     top: 25%;
     width: 180x;
     
-}
-
-#down {
-    position: absolute;
-    margin-bottom: 100px;
-    top: 350px;.
-}
-
-#down2 {
-    position: relative;
-    margin-top: 50px;
-}
-
-
-#guess_form{
-    width: 20px;
-}
-
-.submit {
-    position: relative;
-    bottom: -20px;
-    width: 100px;
-    height: 35px;
 }

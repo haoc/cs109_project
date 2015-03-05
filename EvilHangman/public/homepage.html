@@ -3,19 +3,25 @@
     <head>
         <title>Evil Hangman</title>
         <link rel="stylesheet" href="stylesheets/main.css">
+        
+         <!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+		<!-- Optional theme -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
     </head>
     
-    <div>
-        <img id="img" src="stickman.jpg">
-    </div>
-    
-    <body id="gradient">
-        <div>
-            <button onclick="location.href='game_pages/single_player.html'" class="buttons">Single Player!</button>
-            <button onclick="location.href='game_pages/multi_player.html'" id="multi_button" class="buttons">Multiplayer!</button>
-
-        </div>
-        
-    </body>
-    
+<body id="gradient">
+	<div id="title">Evil Hangman</div> 
+		<div id="main">
+			<img src="stickman.jpg">
+			</br>
+			<div id="buttons">
+				<button onclick="location.href='game_pages/single_player.html'" id="single_button" class="buttons">Single Player!</button>
+				</p>
+				<button onclick="location.href='game_pages/multi_player.html'" id="multi_button" class="buttons">Multiplayer!</button>
+			</div>
+		</div>
+		<div id="footer">by: us</div>
+    </body>    
 </html>
