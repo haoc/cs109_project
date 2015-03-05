@@ -1,44 +1,38 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Multiplayer Evil HangMan</title>
-        <link rel="stylesheet" href="../stylesheets/main.css">
-        <script type="text/javascript" src="../assets/main.js"></script>
-    	<!-- Latest compiled and minified CSS -->
+	<head>
+		<title>Multiplayer Evil HangMan</title>
+		<link rel="stylesheet" href="../stylesheets/main.css">
+		<script type="text/javascript" src="../assets/main.js"></script>
+		<!-- Latest compiled and minified CSS -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-
 		<!-- Optional theme -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
-    </head>
-    
-    <body id="gradient">
+	</head>
+	<body id="gradient">
 		<div id="title">Evil Hangman</div>
 		<div id="main">
-        <h1>Single Player</h1>
-        <div id="down">
-
-            <p>Word Size</p>
-            
-<!--            main.js range of numbers, not working-->
-            <select id="diffList" onchange="window.changeList()">
-                <option value="">-- Difficulty --</option>
-                <option value="1">Easy</option>
-                <option value="2">Medium</option>
-                <option value="3">Hard</option>
-
-            </select>
-            
-            <select id="numbList"></select>
-            
-            <p id="down2">Number of Guesses</p>
-            <form >
-                <input id="guess_form" type="text" value="5">
-            </form>
-            <br><br>
-            <button class="button submit" onclick="location.href='../index.html'">Submit</button>
-        </div>
-        </div>
+			<h1>Single Player</h1>
+			<div id="options">
+			<div id="down">
+				Word Size
+				<!--            main.js range of numbers, not working-->
+				<select id="diffList" onchange="window.changeList()">
+					<option value="">-- Difficulty --</option>
+					<option value="1">Easy</option>
+					<option value="2">Medium</option>
+					<option value="3">Hard</option>
+				</select>
+				<select id="numbList"></select>
+				<form>
+					Number of Guesses
+					<input id="guess_form" type="text" value="5">
+				</form>
+				<button class="button submit" onclick="location.href='../index.html'">Submit</button>
+			</div>
+			</div>
+		</div>
 		<div id="footer">by: us</div>
-    </body>
-
+	</body>
+	
 </html>

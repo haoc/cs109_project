@@ -14,44 +14,45 @@
     <body id="gradient">
 		<div id="title">Evil Hangman</div>
 		<div id="main">
-        <h1 >Multiplayer</h1>
-        <div id="down">
-            <p>Guesser?</p>
-            <select>
-                <option>Yes</option>
-                <option>No</option>
-            </select>
-            
-            <p>Word Size</p>
+			<h1>Multiplayer</h1>
+			<div id="options">
+				
+				<div id="down">
+					Guesser?
+					<select>
+						<option>Yes</option>
+						<option>No</option>
+					</select>
+				</div>
+				<div>
+					Word Size
+					<select id="diffList" onchange="window.changeList()">
+						<option value="">-- Difficulty --</option>
+						<option value="1">Easy</option>
+						<option value="2">Medium</option>
+						<option value="3">Hard</option>
+					</select>
+					<select id="numbList"></select>
+				</div>
 
-            <select id="diffList" onchange="window.changeList()">
-                <option value="">-- Difficulty --</option>
-                <option value="1">Easy</option>
-                <option value="2">Medium</option>
-                <option value="3">Hard</option>
+				<div id="down2">
+					<form> 
+						Number of Guesses
+						<input id="guess_form" type="text" value="5">
+					</form>
+				</div>
 
-            </select>
-
-                <select id="numbList"></select>
-
-
-            <p id="down2">Number of Guesses</p>
-            <form >
-                <input id="guess_form" type="text" value="5">
-            </form>
-
-            <p>Open Rooms</p>
-            <select>
-                <option>Room 1</option>
-                <option>Room 2</option>
-                <option>Room 3</option>
-            </select>
-            
-            <br><br>
-            <button class="button submit" onclick="location.href='../index.html'">Submit</button>
-            
-        </div>
-        </div>
+				<div>
+					Open Rooms
+					<select>
+						<option>Room 1</option>
+						<option>Room 2</option>
+						<option>Room 3</option>
+					</select>
+				</div>
+				<button class="button submit" onclick="location.href='../index.html'">Submit</button>
+				</div>
+			</div>
         <div id="footer">by: us</div>
     </body>
 </html>

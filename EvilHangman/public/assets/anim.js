@@ -190,9 +190,9 @@ function Simulation (c) {
 
     function init()
     {
-		addObj(10.0,10.0,bh_Float,[0.2,0.01],"graphic1");
-		addObj(200.0,10.0,bh_Rotate,[0,0,0.10,0.01],"graphic1");
-		addObj(400.0,10.0,bh_Fret,[0.2,0.05,0,60],"graphic1");
+		addObj(width/4,10,bh_Float,[0.2,0.01],"graphic1");
+		addObj(width/2,height/2,bh_Rotate,[0,0,0.10,0.01],"graphic1");
+		addObj(300,10,bh_Fret,[0.2,0.05,0,60],"graphic1");
 		draw();
     }
 
