@@ -1,5 +1,5 @@
-/*might not need it*/
-body {
+body, html{
+	height:100%;
 	min-width:100%;
 	min-height:100%; 
 	margin:0; 
