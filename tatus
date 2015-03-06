@@ -1,0 +1,66 @@
+[33mcommit 96d7c99d9f2c48a36a1b6def2583c3edaff8620c[m
+Author: haoc <haoc92@gmail.com>
+Date:   Sat Feb 28 03:03:59 2015 -0600
+
+    added home/singple/multi pages
+
+[33mcommit 9b774df7cd33e731edc0a9133602031dc99ef234[m
+Author: Christopher Komplin <Christopher.Komplin@utexas.edu>
+Date:   Sat Feb 28 00:57:56 2015 -0600
+
+    Delete makefile
+
+[33mcommit 1ae3b9ab5b98344924990f8ff5d8403251e59415[m
+Author: unknown <Christopher.Komplin@utexas.edu>
+Date:   Sat Feb 28 00:55:49 2015 -0600
+
+    testing my account is linked
+
+[33mcommit 43ca99a994153d768db8a5beba317a40f2c9b1b9[m
+Author: unknown <Christopher.Komplin@cs.utexas.edu>
+Date:   Sat Feb 28 00:51:38 2015 -0600
+
+    added more functionality
+
+[33mcommit b3b07314a43dc4fe823740158213ba256819430d[m
+Author: unknown <Christopher.Komplin@cs.utexas.edu>
+Date:   Fri Feb 27 23:54:33 2015 -0600
+
+    working js and added keyboard to html
+
+[33mcommit 337abcafa150b13ec0a841e64fd2c08b0bef208c[m
+Author: unknown <Christopher.Komplin@cs.utexas.edu>
+Date:   Fri Feb 27 22:41:58 2015 -0600
+
+    fixed loop bug
+
+[33mcommit 3a16c90158a35ff83eaeb85cd87fd0cf0c1defbb[m
+Author: unknown <Christopher.Komplin@cs.utexas.edu>
+Date:   Fri Feb 27 22:27:33 2015 -0600
+
+    added extra info
+
+[33mcommit 0d7e5ac24afe54fce314051e6acf09c1478bcf8d[m
+Author: unknown <Christopher.Komplin@cs.utexas.edu>
+Date:   Fri Feb 27 22:25:45 2015 -0600
+
+    added all my files
+
+[33mcommit 04b2770a3902170c9492d59723f06891f70600f0[m
+Merge: 4dd6963 0a44d6e
+Author: haoc <haoc92@gmail.com>
+Date:   Fri Feb 27 03:32:46 2015 -0600
+
+    Merge branch 'master' of https://github.com/haoc/cs109_project
+
+[33mcommit 4dd696351c97664e0be71fadffc0cb52d48dff69[m
+Author: haoc <haoc92@gmail.com>
+Date:   Fri Feb 27 03:23:47 2015 -0600
+
+    First Commit
+
+[33mcommit 0a44d6e67463d15cd63ea8db8d3f492742249330[m
+Author: Kevin Chi <haoc92@gmail.com>
+Date:   Fri Feb 27 03:17:42 2015 -0600
+
+    Initial commit
