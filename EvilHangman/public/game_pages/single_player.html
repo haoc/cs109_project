@@ -2,37 +2,77 @@
 <html>
 	<head>
 		<title>Multiplayer Evil HangMan</title>
+        
+        <!--        Reset CSS-->
+        <link rel="stylesheet" href="stylesheets/css_reset.css">
+        
+        <!--        Main CSS-->
 		<link rel="stylesheet" href="../stylesheets/main.css">
+        
+        <!--        Main JS-->
 		<script type="text/javascript" src="../assets/main.js"></script>
-		<!-- Latest compiled and minified CSS -->
+        
+        <!--        jQuery-->
+		<script type="text/javascript" src="../assets/jQuery/jquery-2.1.3.min.js"></script>
+        
+        <!-- Latest compiled and minified CSS -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-		<!-- Optional theme -->
+		
+        <!-- Optional theme -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
-	</head>
+        
+<!--        Doesn't work if it's in main.js; NEED TO FIX-->
+<!--        Only allow numbers in input box   -->
+        <script>
+        $(document).ready(function() {
+    $("#numbers_only").keydown(function (e) {
+        // Allow: backspace, delete, escape, enter.
+        if ($.inArray(e.keyCode, [46, 8, 27, 13, 110]) !== -1 ||
+             // Allow: Ctrl+A
+            (e.keyCode == 65 && e.ctrlKey === true) || 
+             // Allow: home, end, left, right
+            (e.keyCode >= 35 && e.keyCode <= 39)) {
+                 // let it happen, don't do anything
+                 return;
+        }
+        // Ensure that it is a number and stop the keypress
+        if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
+            e.preventDefault();
+        }
+    });
+});
+        
+        </script>
+        
+    </head>
 	<body id="gradient">
 		<div id="title">Evil Hangman</div>
 		<div id="main">
 			<h1>Single Player</h1>
 			<div id="options">
-			<div id="down">
-				Word Size
-				<!--            main.js range of numbers, not working-->
-				<select id="diffList" onchange="window.changeList()">
-					<option value="">-- Difficulty --</option>
-					<option value="1">Easy</option>
-					<option value="2">Medium</option>
-					<option value="3">Hard</option>
-				</select>
-				<select id="numbList"></select>
-				<form>
-					Number of Guesses
-					<input id="guess_form" type="text" value="5">
-				</form>
-				<button class="button submit" onclick="location.href='../index.html'">Submit</button>
-			</div>
+                
+                <p class="box">Word Sizes</p>
+                
+                <select id="diffList" class="box" onchange="window.changeList()">
+                    <option value="">-- Difficulty --</option>
+                    <option value="1">Easy</option>
+                    <option value="2">Medium</option>
+                    <option value="3">Hard</option>
+                </select>
+                
+                <select id="numbList" class="box"></select>
+                <br><br>
+                <p id="x" >Number of Guesses</p>
+                <form class="y">
+                    
+                    <input style="width:50px;" class="y" id="numbers_only" type="text" value="5">
+                </form>
+                <br><br>
+                <button class="button submit" onclick="location.href='../index.html'">Start</button>
+                
 			</div>
 		</div>
 		<div id="footer">by: us</div>
-	</body>
+    </body>
 	
 </html>

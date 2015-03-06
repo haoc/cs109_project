@@ -2,13 +2,48 @@
 <html>
     <head>
         <title>Multiplayer Evil HangMan</title>
+        <!--        Reset CSS-->
+        <link rel="stylesheet" href="stylesheets/css_reset.css">
+        
+        <!--        Main CSS-->
         <link rel="stylesheet" href="../stylesheets/main.css">
+        
+        <!--        Main JS-->
         <script type="text/javascript" src="../assets/main.js"></script>
+        
+        <!--        jQuery-->
+        <script type="text/javascript" src="../assets/jQuery/jquery-2.1.3.min.js"></script>
+        
     	<!-- Latest compiled and minified CSS -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 
 		<!-- Optional theme -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+        
+        <!--        Doesn't work if it's in main.js; NEED TO FIX     -->
+        <!--        Only allow numbers in input box   -->
+        <script>
+        $(document).ready(function() {
+    $("#numbers_only").keydown(function (e) {
+        // Allow: backspace, delete, escape, enter.
+        if ($.inArray(e.keyCode, [46, 8, 27, 13, 110]) !== -1 ||
+             // Allow: Ctrl+A
+            (e.keyCode == 65 && e.ctrlKey === true) || 
+             // Allow: home, end, left, right
+            (e.keyCode >= 35 && e.keyCode <= 39)) {
+                 // let it happen, don't do anything
+                 return;
+        }
+        // Ensure that it is a number and stop the keypress
+        if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
+            e.preventDefault();
+        }
+    });
+});
+        </script>
+        
+        
+        
     </head>
     
     <body id="gradient">
@@ -18,39 +53,44 @@
 			<div id="options">
 				
 				<div id="down">
-					Guesser?
-					<select>
+					<p class="box">Guesser?</p>
+					<select class="box">
 						<option>Yes</option>
 						<option>No</option>
 					</select>
 				</div>
 				<div>
-					Word Size
-					<select id="diffList" onchange="window.changeList()">
+                    <br>
+                    <p style="clear:both;"></p>
+                    <p class="box">Word Size</p>
+					
+					<select id="diffList" class="box" onchange="window.changeList()">
 						<option value="">-- Difficulty --</option>
 						<option value="1">Easy</option>
 						<option value="2">Medium</option>
 						<option value="3">Hard</option>
 					</select>
-					<select id="numbList"></select>
+					<select id="numbList" class="box"></select>
 				</div>
-
+                
+                <p style="clear:both"></p>
 				<div id="down2">
 					<form> 
-						Number of Guesses
-						<input id="guess_form" type="text" value="5">
+						<p class="box">Number of Guesses</p>
+						<input class="box" style="width: 40px" id="numbers_only" type="text" value="5">
 					</form>
 				</div>
-
+                <p style="clear:both"></p>
 				<div>
-					Open Rooms
-					<select>
+					<p class="box">Open Rooms</p>
+					<select class="box">
 						<option>Room 1</option>
 						<option>Room 2</option>
 						<option>Room 3</option>
 					</select>
 				</div>
-				<button class="button submit" onclick="location.href='../index.html'">Submit</button>
+                <br>
+				<button id="button_position" class="button submit" onclick="location.href='../index.html'">Start</button>
 				</div>
 			</div>
         <div id="footer">by: us</div>

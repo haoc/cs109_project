@@ -2,11 +2,16 @@
 <html lang="en">
 	<head>
 		<title>Evil Hangman</title>
+        <!--        Reset CSS-->
+        <link rel="stylesheet" href="stylesheets/css_reset.css">
+        <!--        Main CSS-->
 		<link rel="stylesheet" href="stylesheets/main.css">
+
 		<!-- Latest compiled and minified CSS -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 		<!-- Optional theme -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+        
 	</head>
 	
 	<body id="gradient">
@@ -14,9 +19,9 @@
 		<div id="main">
 			<img src="stickman.jpg">
 			</br>
-			<div id="buttons">
+			<div id="buttons" class="button_margins">
 				<button onclick="location.href='game_pages/single_player.html'" id="single_button" class="buttons">Single Player!</button>
-				</p>
+				
 				<button onclick="location.href='game_pages/multi_player.html'" id="multi_button" class="buttons">Multiplayer!</button>
 			</div>
 		</div>

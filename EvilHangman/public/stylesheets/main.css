@@ -1,13 +1,23 @@
+/*might not need it*/
 body {
 	min-width:100%;
-	min-height:100%;
-	margin:0;
+	min-height:100%; 
+	margin:0; 
 	padding:0;
 }
 
+html{
+    height: 100%;
+}
+
 #gradient {
+    
     background: #00BFFF;
+    background: -webkit-linear-gradient(to right bottom, #086A87, #00BFFF);
     background: linear-gradient(to right bottom, #086A87, #00BFFF);
+    border-radius: 2px;
+    background-size:100% 100%;
+    background-repeat: no-repeat;
 }
 
 #nav {
@@ -39,16 +49,17 @@ body {
 }
 
 #footer {
-	background-color:#EEEEEE;
+	background-color:#FF9900;
 	color:black;
 	clear:both;
 	text-align:center;
-	position:relative;
+	position:absolute;
 	bottom: 0;
 	left: 0;
 	width: 100%;
-	height: 16px; 
-	font-size: 8px;
+	height: 25px; 
+	font-size: 18px;
+	
 }
 
 
@@ -80,15 +91,6 @@ body {
 	line-height: 2;
 }
 
-
-#down {
-   
-}
-
-#down2 {
-   
-}
-
 #guess_form{
 	height: 30px;
 }
@@ -117,3 +119,37 @@ body {
     width: 180x;
     
 }
+
+
+.box{
+    margin: 1.5%;
+    float:left;
+}
+
+#x {
+    position: absolute;
+    right: 855px;
+    width: 150px;
+    float: left;
+}
+
+.y{
+    position:absolute;
+    right:390px;
+    top: 73px;
+    margin: 10px;
+    widows: 20px;
+    height: 30px;
+/*    float: left;*/
+}
+
+#button_position{
+    position: absolute;
+    left: 45%;
+    bottom: 55%;
+}
+
+.button_margins{
+    margin-top: 1.3%;   
+}
+
