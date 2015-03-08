@@ -40,7 +40,7 @@ function confirmation() {
     var answer = confirm("Return to menu?");
     if(answer)
     {
-        window.location = "homepage.html";
+        window.location = "#/";
     }
     else
     {
@@ -68,4 +68,36 @@ function confirmation() {
 //            e.preventDefault();
 //        }
 //    });
+//});
+
+
+
+var app = angular.module('evil_hangman_app',['ngRoute']);
+
+
+app.config(function($routeProvider){
+
+
+      $routeProvider
+          .when('/',{
+                templateUrl: 'homepage.html'
+          })
+          .when('/game_pages/single_player',{
+                templateUrl: 'game_pages/single_player.html'
+          })
+          .when('/game_pages/multi_player',{
+                templateUrl: 'game_pages/multi_player.html'
+          })
+          .when('/game_pages/index',{
+                templateUrl: 'game_pages/index.html'
+          });
+
+
+});
+
+
+//app.controller('cfgController',function($scope){
+//
+//      $scope.message="Hello world";
+//
 //});
