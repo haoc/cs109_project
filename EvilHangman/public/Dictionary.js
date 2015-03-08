@@ -381,12 +381,24 @@ function Dictionary()
 
 
 
-
+// window.onload?
 $(document).ready(function() {
     var gameOver = false;
     var displayedGameOver = false;
     var gameDictionary = new Dictionary();
+    
+//    Returns the word length user selected
+//    var ee = document.getElementById("numbList");
+//    var wordLength = ee.options[ee.selectedIndex].value;
+    
     var wordLength = 8;
+    
+    // Returns the difficulty (value) selected
+    // 1 = angel, 2 = chaotic angel, 3 = normal, 4 = chaotic evil, 5 = evil
+//    var e = document.getElementById("diffList");
+//    var difficulty = e.options[e.selectedIndex].value;
+//    console.log(difficulty);
+    
     var difficulty = 0; //0=angel, 1=chaotic angel, 2=normal, 3=chaotic evil, 4=evil
 
 

@@ -1,39 +1,55 @@
-//var select = document.getElementById('length');    
+//window.onload = function(){
+//    var select = document.getElementById('numbList');    
 //
-//for (var i = 0; i<= 24; i++){
+//    for (var i = 2; i<= 21; i++){
 //    
 //    var option = document.createElement('option');
 //    option.value = i;
 //    option.innerHTML = i;
 //    select.options.add(option);
+//    }
 //}
+//    // using ready
+//    var select = document.getElementById('numbList');    
+//
+//    for (var i = 2; i<= 21; i++){
+//    
+//    var option = document.createElement('option');
+//    option.value = i;
+//    option.innerHTML = i;
+//    select.options.add(option);
+//    }
 
 
-var difficulty = {};
-difficulty['1'] = [1,2,3];
-difficulty['2'] = [4,5,6];
-difficulty['3'] = [7,8,9];
-
-window.changeList = function () {
-    var diffList = document.getElementById("diffList");
-    var numbRange = document.getElementById("numbList");
-    
-    var selectDiff = diffList.options[diffList.value].value;
-    while(numbRange.options.length)
-    {
-        numbRange.remove(0);
-    }
-    var diff = difficulty[selectDiff];
-    if(diff)
-    {
-        var i;
-        for(i = 0; i < diff.length; i++)
-        {
-            var difficulty2 = new Option(diff[i], i);
-            numbRange.options.add(difficulty2);
-        }
-    }
-}
+//var difficulty = {};
+//difficulty['1'] = [2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21];
+//difficulty['2'] = [2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21];
+//difficulty['3'] = [2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21];
+//difficulty['4'] = [2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21];
+//difficulty['5'] = [2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21];
+//
+//window.changeList = function () {
+//    var diffList = document.getElementById("diffList");
+//    var numbRange = document.getElementById("numbList");
+//    
+//    var selectDiff = diffList.options[diffList.value].value;
+//    while(numbRange.options.length)
+//    {
+//        numbRange.remove(0);
+//    }
+//    var diff = difficulty[selectDiff];
+//    console.log(diff);
+//    if(diff)
+//    {
+//        var i;
+//        for(i = 0; i < diff.length; i++)
+//        {
+//            var difficulty2 = new Option(diff[i], i);
+//            console.log(difficulty2);
+//            numbRange.options.add(difficulty2);
+//        }
+//    }
+//}
 
 
 function confirmation() {

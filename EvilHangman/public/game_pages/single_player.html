@@ -21,8 +21,7 @@
 		
         <!-- Optional theme -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
-                <!--        Main JS-->
-		<script type="text/javascript" src="../assets/main.js"></script>
+
         
 <!--        Doesn't work if it's in main.js; NEED TO FIX-->
 <!--        Only allow numbers in input box   -->
@@ -54,28 +53,54 @@
 			<h1>Single Player</h1>
 			<div id="options">
                 
-                <p class="box">Word Sizes</p>
+                <p class="box">Difficulty & Word Sizes</p>
                 
-                <select id="diffList" class="box" onchange="window.changeList()">
-                    <option value="">-- Difficulty --</option>
-                    <option value="1">Easy</option>
-                    <option value="2">Medium</option>
-                    <option value="3">Hard</option>
+<!--                <select id="diffList" class="box" onchange="window.changeList()">-->
+                <select id="diffList" class="box">    
+                    <option value="1">Angel</option>
+                    <option value="2">Chaotic Angel</option>
+                    <option value="3" selected="selected">Normal</option>
+                    <option value="4">Chaotic Evil</option>
+                    <option value="5">Evil</option>
                 </select>
                 
-                <select id="numbList" class="box"></select>
+                <select id="numbList" class="box">
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8" selected="selected">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                    <option value="13">13</option>
+                    <option value="14">14</option>
+                    <option value="15">15</option>
+                    <option value="16">16</option>
+                    <option value="17">17</option>
+                    <option value="18">18</option>
+                    <option value="19">19</option>
+                    <option value="20">20</option>
+                    <option value="21">21</option>
+                </select>
                 <br><br>
+<!--
                 <p id="x" >Number of Guesses</p>
                 <form class="y">
-                    
                     <input style="width:50px;" class="y" id="numbers_only" type="text" value="5">
                 </form>
+-->
                 <br><br>
                 <button class="button submit" onclick="location.href='#/game_pages/index'">Start</button>
                 
 			</div>
 		</div>
 		<div id="footer">by: us</div>
+                        <!--        Main JS-->
+		<script type="text/javascript" src="../assets/main.js"></script>
     </body>
 	
 </html>
