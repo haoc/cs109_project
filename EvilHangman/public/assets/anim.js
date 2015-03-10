@@ -329,7 +329,7 @@ function startScene(scene) {
 			var i = 0
 			for (i;i<20;i++){
 			pdeg = pdeg + 0.35;
-			sim.addPrt(x,y,Math.cos(pdeg)*r,Math.sin(pdeg)*r,-Math.cos(pdeg)*r*0.05,-Math.sin(pdeg)*r*0.05,40,"particle");
+			sim.addPrt(x,y,Math.cos(pdeg)*r,Math.sin(pdeg)*r,-Math.cos(pdeg)*r*0.05,-Math.sin(pdeg)*r*0.05,100,"particle");
 			}
 		console.log("Canvas was clicked at %f,%f", x, y);
     });
