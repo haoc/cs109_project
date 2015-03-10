@@ -386,10 +386,33 @@ function Dictionary()
 // window.onload?
 function startgame() {
 
-    for(var character = 'a'; character <= 'z'; character++)
-    {
-        $('#'+character+'Button').css('color','black');
-    }
+    $('#qButton').css('color','black');
+    $('#wButton').css('color','black');
+    $('#eButton').css('color','black');
+    $('#rButton').css('color','black');
+    $('#tButton').css('color','black');
+    $('#yButton').css('color','black');
+    $('#uButton').css('color','black');
+    $('#iButton').css('color','black');
+    $('#oButton').css('color','black');
+    $('#pButton').css('color','black');
+    $('#aButton').css('color','black');
+    $('#sButton').css('color','black');
+    $('#dButton').css('color','black');
+    $('#fButton').css('color','black');
+    $('#gButton').css('color','black');
+    $('#hButton').css('color','black');
+    $('#jButton').css('color','black');
+    $('#kButton').css('color','black');
+    $('#lButton').css('color','black');
+    $('#zButton').css('color','black');
+    $('#xButton').css('color','black');
+    $('#cButton').css('color','black');
+    $('#vButton').css('color','black');
+    $('#bButton').css('color','black');
+    $('#nButton').css('color','black');
+    $('#mButton').css('color','black');
+
 
     var gameOver = false;
     var displayedGameOver = false;
