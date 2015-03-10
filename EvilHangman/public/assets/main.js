@@ -1,3 +1,4 @@
+
 //window.onload = function(){
 //    var select = document.getElementById('numbList');    
 //
@@ -56,16 +57,9 @@ function confirmation() {
     var answer = confirm("Return to menu?");
     if(answer)
     {
-        window.location = "#/";
-    }
-    else
-    {
-//        alert("yay")
-    }
-    
+        window.location = "main_homepage.html";
+    }    
 }
-
-
 
 // Only works if it's in .html; NEED TO FIX
 //        $(document).ready(function() {
@@ -86,10 +80,7 @@ function confirmation() {
 //    });
 //});
 
-
-
 var app = angular.module('evil_hangman_app',['ngRoute']);
-
 
 app.config(function($routeProvider){
 
@@ -111,9 +102,8 @@ app.config(function($routeProvider){
 
 });
 
+app.controller('cfgController',function($scope){
 
-//app.controller('cfgController',function($scope){
-//
-//      $scope.message="Hello world";
-//
-//});
+      $scope.message="Hello world";
+
+});

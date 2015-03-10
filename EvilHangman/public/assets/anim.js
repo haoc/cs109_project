@@ -239,7 +239,7 @@ function Simulation (c) {
 
 } // end Simulation
     
-$(document).ready( function() {
+function start() {
 
     var canvas = $("#gamefield")[0];
     var sim = Simulation(canvas);
@@ -256,4 +256,4 @@ $(document).ready( function() {
 	console.log("Canvas was clicked at %f,%f", x, y);
     });
 	
-});
+};

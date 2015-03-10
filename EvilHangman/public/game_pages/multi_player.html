@@ -3,16 +3,10 @@
     <head>
         <title>Multiplayer Evil HangMan</title>
         <!--        Reset CSS-->
-        <link rel="stylesheet" href="../stylesheets/css_reset.css">
+        <link rel="stylesheet" href="stylesheets/css_reset.css">
         
         <!--        Main CSS-->
-        <link rel="stylesheet" href="../stylesheets/main.css">
-        
-        <!--        Main JS-->
-        <script type="text/javascript" src="../assets/main.js"></script>
-        
-        <!--        jQuery-->
-        <script type="text/javascript" src="../assets/jQuery/jquery-2.1.3.min.js"></script>
+        <link rel="stylesheet" href="stylesheets/main.css">
         
     	<!-- Latest compiled and minified CSS -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
@@ -24,30 +18,27 @@
         <!--        Only allow numbers in input box   -->
         <script>
         $(document).ready(function() {
-    $("#numbers_only").keydown(function (e) {
-        // Allow: backspace, delete, escape, enter.
-        if ($.inArray(e.keyCode, [46, 8, 27, 13, 110]) !== -1 ||
-             // Allow: Ctrl+A
-            (e.keyCode == 65 && e.ctrlKey === true) || 
-             // Allow: home, end, left, right
-            (e.keyCode >= 35 && e.keyCode <= 39)) {
-                 // let it happen, don't do anything
-                 return;
-        }
-        // Ensure that it is a number and stop the keypress
-        if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
-            e.preventDefault();
-        }
-    });
-});
+			$("#numbers_only").keydown(function (e) {
+				// Allow: backspace, delete, escape, enter.
+				if ($.inArray(e.keyCode, [46, 8, 27, 13, 110]) !== -1 ||
+					 // Allow: Ctrl+A
+					(e.keyCode == 65 && e.ctrlKey === true) || 
+					 // Allow: home, end, left, right
+					(e.keyCode >= 35 && e.keyCode <= 39)) {
+						 // let it happen, don't do anything
+						 return;
+				}
+				// Ensure that it is a number and stop the keypress
+				if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
+					e.preventDefault();
+				}
+			});
+		});
         </script>
-        
-        
         
     </head>
     
     <body id="gradient">
-		<div id="title">Evil Hangman</div>
 		<div id="main">
 			<h1>Multiplayer</h1>
 			<div id="options">
@@ -93,6 +84,5 @@
 				<button id="button_position" class="button submit" onclick="location.href='#/game_pages/index'">Start</button>
 				</div>
 			</div>
-        <div id="footer">by: us</div>
     </body>
 </html>

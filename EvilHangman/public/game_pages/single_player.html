@@ -4,17 +4,10 @@
 		<title>Multiplayer Evil HangMan</title>
         
         <!--        Reset CSS-->
-        <link rel="stylesheet" href="../stylesheets/css_reset.css">
+        <link rel="stylesheet" href="stylesheets/css_reset.css">
         
         <!--        Main CSS-->
-		<link rel="stylesheet" href="../stylesheets/main.css">
-        
-        
-        <!--        jQuery-->
-		<script type="text/javascript" src="../assets/jQuery/jquery-2.1.3.min.js"></script>
-        
-        <!--        Angular.js-->
-        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>    
+        <link rel="stylesheet" href="stylesheets/main.css">
         
         <!-- Latest compiled and minified CSS -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
@@ -22,33 +15,30 @@
         <!-- Optional theme -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
 
-        
-<!--        Doesn't work if it's in main.js; NEED TO FIX-->
-<!--        Only allow numbers in input box   -->
+		        <script type="text/javascript" src="assets/Dictionary.js"></script>
         <script>
-        $(document).ready(function() {
-    $("#numbers_only").keydown(function (e) {
-        // Allow: backspace, delete, escape, enter.
-        if ($.inArray(e.keyCode, [46, 8, 27, 13, 110]) !== -1 ||
-             // Allow: Ctrl+A
-            (e.keyCode == 65 && e.ctrlKey === true) || 
-             // Allow: home, end, left, right
-            (e.keyCode >= 35 && e.keyCode <= 39)) {
-                 // let it happen, don't do anything
-                 return;
-        }
-        // Ensure that it is a number and stop the keypress
-        if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
-            e.preventDefault();
-        }
-    });
-});
+		$(document).ready(function() {
+			$("#numbers_only").keydown(function (e) {
+				// Allow: backspace, delete, escape, enter.
+				if ($.inArray(e.keyCode, [46, 8, 27, 13, 110]) !== -1 ||
+					 // Allow: Ctrl+A
+					(e.keyCode == 65 && e.ctrlKey === true) || 
+					 // Allow: home, end, left, right
+					(e.keyCode >= 35 && e.keyCode <= 39)) {
+						 // let it happen, don't do anything
+						 return;
+				}
+				// Ensure that it is a number and stop the keypress
+				if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
+					e.preventDefault();
+				}
+			});
+		});
         
         </script>
         
     </head>
 	<body id="gradient">
-		<div id="title">Evil Hangman</div>
 		<div id="main">
 			<h1>Single Player</h1>
 			<div id="options">
@@ -56,15 +46,15 @@
                 <p class="box">Difficulty & Word Sizes</p>
                 
 <!--                <select id="diffList" class="box" onchange="window.changeList()">-->
-                <select id="diffList" class="box">    
-                    <option value="1">Angel</option>
-                    <option value="2">Chaotic Angel</option>
-                    <option value="3" selected="selected">Normal</option>
-                    <option value="4">Chaotic Evil</option>
-                    <option value="5">Evil</option>
+                <select id="diffList" onchange="diffChange()" class="box">    
+                    <option value="0">Angel</option>
+                    <option value="1">Chaotic Angel</option>
+                    <option value="2" selected="selected">Normal</option>
+                    <option value="3">Chaotic Evil</option>
+                    <option value="4">Evil</option>
                 </select>
                 
-                <select id="numbList" class="box">
+                <select id="numbList" onchange="wordChange()" class="box">
                     <option value="2">2</option>
                     <option value="3">3</option>
                     <option value="4">4</option>
@@ -87,20 +77,19 @@
                     <option value="21">21</option>
                 </select>
                 <br><br>
-<!--
-                <p id="x" >Number of Guesses</p>
-                <form class="y">
-                    <input style="width:50px;" class="y" id="numbers_only" type="text" value="5">
-                </form>
--->
-                <br><br>
-                <button class="button submit" onclick="location.href='#/game_pages/index'">Start</button>
-                
+
+                <p class="box">Number of Guesses</p>
+				<select id="guessList" onchange="guessChange()" class="box">
+					<option value="5">5</option>
+					<option value="10" selected="selected">10</option>
+					<option value="15">15</option>
+					<option value="20">20</option>
+				</select>
+					<br><br>
+					<button class="button submit" onclick="location.href='#/game_pages/index'">Start</button>
+                </div>
 			</div>
 		</div>
-		<div id="footer">by: us</div>
-                        <!--        Main JS-->
-		<script type="text/javascript" src="../assets/main.js"></script>
     </body>
 	
 </html>
