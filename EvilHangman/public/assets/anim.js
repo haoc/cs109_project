@@ -5,6 +5,7 @@
  */
 var simStarted = false;
 var sim;
+
 function Simulation (c) {
     
     var canvas = c;
@@ -287,6 +288,7 @@ function Simulation (c) {
     return {
 		init: init,
 		start: start,
+		addPrt: addPrt,
 		end: end,
 		stop: stop
     };
@@ -294,6 +296,8 @@ function Simulation (c) {
 } // end Simulation
 
 var scenen = 0;
+var pdeg = 0;
+
 
 function sceneNum(){
 	return scenen;
@@ -316,12 +320,18 @@ function startScene(scene) {
 	sim.start();
 	
     var c = $("#gamefield").on("click", function(event) {
-	var x,y, rect;
-	rect = canvas.getBoundingClientRect();
-	x = event.clientX - rect.left;
-	y = event.clientY - rect.top;
-
-	console.log("Canvas was clicked at %f,%f", x, y);
+		var x,y, rect,xv,yv,xa,ya;
+		rect = canvas.getBoundingClientRect();
+			
+			x = event.clientX - rect.left;
+			y = event.clientY - rect.top;
+			var r = 3;
+			var i = 0
+			for(i = 0; i<10; i++){
+				pdeg = pdeg + 0.1*Math.pi;
+				sim.addPrt(x,y,Math.cos(pdeg)*r,Math.sin(pdeg)*r,-Math.cos(pdeg)*r*0.05,-Math.sin(pdeg)*r*0.05,200,"particle");
+			}
+		console.log("Canvas was clicked at %f,%f", x, y);
     });
 	
-};
+}

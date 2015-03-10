@@ -412,7 +412,8 @@ function startgame() {
     $('#bButton').css('color','black');
     $('#nButton').css('color','black');
     $('#mButton').css('color','black');
-
+    
+    startScene(10);
 
     var gameOver = false;
     var displayedGameOver = false;
