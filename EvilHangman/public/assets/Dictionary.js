@@ -1,9 +1,9 @@
 var wordsize = 8;
-var diff = 2;
+var hardness = 2;
 var totalguesses = 10;
 
 function diffChange() {
-	diff = document.getElementById("diffList").value;
+	hardness = document.getElementById("diffList").value;
 }
 function wordChange() {
 	wordsize = document.getElementById("numbList").value;
@@ -30,7 +30,7 @@ function Dictionary()
         dictionary = getDictionary();
         difficulty = dif;
         wordSize(wordLength);
-        if(difficulty === 2)
+        if(difficulty == 2)
             normalWord();
     }
     // destructive method
@@ -68,20 +68,20 @@ function Dictionary()
         	console.log("num words without letter "+letter+": "+withoutLetter.length+"/"+wordCount());
         }
         // CHANGE TO ADD DIFICULTY + RANDOMIZATION
-        if(difficulty === 4)
+        if(difficulty == 4)
         {
             if(!short_circut_guess_evil(withLetter, withoutLetter, letter)) 
                 return shouldSelectLetter_evil(withLetter ,withoutLetter, letter);
             else
                 return false;
         }
-        else if(difficulty === 3)
+        else if(difficulty == 3)
         {
             if(withLetter.length == 0)
                 return false;
             return shouldSelectLetter_chaotic(withLetter ,withoutLetter, letter, 1.25, 1.25);
         }
-        else if(difficulty === 2)
+        else if(difficulty == 2)
         {
             if(withLetter.length != 0)
                 return {
@@ -91,13 +91,13 @@ function Dictionary()
             else
                 return false;
         }
-        else if(difficulty === 1)
+        else if(difficulty == 1)
         {
             if(withLetter.length == 0)
                 return false;
             return shouldSelectLetter_chaotic(withLetter ,withoutLetter, letter, .5, 1.25);
         }
-        else if(difficulty === 0)
+        else if(difficulty == 0)
         {
             if(withLetter.length == 0)
                 return false;
@@ -192,7 +192,7 @@ function Dictionary()
         }
         var index = getLuckyKey(chanceArray);
 
-        if(index[0] === 'w')
+        if(index[0] == 'w')
         {
             dictionary = withoutLetter;
             return false;
@@ -254,7 +254,7 @@ function Dictionary()
 	        for(var x in wordPool)
 	        {
 	            var temp = wordPool[x];
-	            if(temp === undefined)
+	            if(temp == undefined)
 	            	continue;
 	            if(match(firstWord,temp,letter))
 	            {
@@ -286,7 +286,7 @@ function Dictionary()
     {
         for(var x in word)
         {
-            if(word[x] === letter)
+            if(word[x] == letter)
                 return true;
         }
         return false;
@@ -296,7 +296,7 @@ function Dictionary()
         var count = 0;
         for(var x in word)
         {
-            if(word[x] === letter)
+            if(word[x] == letter)
                 count++;
         }
         return count;
@@ -307,7 +307,7 @@ function Dictionary()
     	var counter = 0;
     	for(var x in word)
     	{
-    		if(word[x] === letter)
+    		if(word[x] == letter)
     			output[counter++] = x;
     	}
     	return output;
@@ -341,7 +341,7 @@ function Dictionary()
     }
     function reconOne(keyList)
     {
-        if(dictionary.length === 1)
+        if(dictionary.length == 1)
         {
             var word = dictionary[0];
             for(var x = 0; x < word.length; x++)
@@ -395,10 +395,9 @@ function startgame() {
 //    var difficulty = e.options[e.selectedIndex].value;
 //    console.log(difficulty);
     
-    var difficulty = diff; //0=angel, 1=chaotic angel, 2=normal, 3=chaotic evil, 4=evil
-	console.log(diff);
+    var difficulty = hardness; //0=angel, 1=chaotic angel, 2=normal, 3=chaotic evil, 4=evil
+	console.log(difficulty);
 
-    //NEED TO GET PARAMETERS FROM USER!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     gameDictionary.create(wordLength, difficulty);
 
     var numGuesses = 0;
@@ -428,7 +427,7 @@ function startgame() {
     
     function check(result, id)
     {
-        if(result === false)
+        if(result == false)
         {
             guessesToString(false);
             $(id).css('color','red');
@@ -454,7 +453,7 @@ function startgame() {
     function wordToString(initialized, array, letter)
     {
         var tempWord = '';
-        if(initialized === false)
+        if(initialized == false)
         {
             for(var x = 0; x < wordLength; x++)
             {
@@ -485,7 +484,7 @@ function startgame() {
     }
     function guessesToString(correct)
     {
-        if(correct === false)
+        if(correct == false)
         {
             numGuesses++;
             if(numGuesses > numGuessesToLose)
