@@ -3,6 +3,8 @@
  * @param {canvas} canvas Requires a HTML5 Canvas object
  * @return {object} This returns a simulation module
  */
+var simStarted = false;
+var sim;
 function Simulation (c) {
     
     var canvas = c;
@@ -47,7 +49,6 @@ function Simulation (c) {
 	{
 		obj.xv = obj.xv + obj.xa;
 		obj.yv = obj.yv + obj.ya;
-		changeBehavior (obj,bh_Move,parameters);
 	}
 	
 	function bh_Float (obj,draw)
@@ -71,16 +72,12 @@ function Simulation (c) {
 			ctx.save();
 			
 			var img = document.getElementById(obj.image);
-			// move to the center of the canvas
 			
 			ctx.translate(obj.x+img.width/2,obj.y+img.height/2);
 
 			ctx.rotate(obj.parameters[0]*Math.PI/180);
 			
 			ctx.drawImage(img,-(img.width/2),-(img.height/2));
-					
-			// we’re done with the rotating so restore the unrotated context
-
 			ctx.restore();
 			
 			return true;
@@ -114,6 +111,17 @@ function Simulation (c) {
 	
 	}
 	
+	function bh_Drip (obj,draw)
+	{
+		if (obj.parameters[1] < obj.parameters[0]){
+			obj.parameters[1]++
+		}
+		else{
+			obj.parameters[1] = 0;
+			addPrt(obj.x,obj.y,0,obj.parameters[2],0,obj.parameters[3],30,"particle");
+		}
+		return false;
+	}
 	function bh_Fret (obj,draw)
 	{
 		if(obj.parameters[2] < (obj.parameters[3])){
@@ -179,20 +187,59 @@ function Simulation (c) {
 	
     function draw()
     {
-	//var c = $("#mycanvas")[0];
-	ctx = canvas.getContext("2d");
-	ctx.fillStyle = "#ffffff";
-	ctx.fillRect(0,0,width,height);
-	objs.forEach(drawItem);
-	prts.forEach(drawItem);
-	
+		//var c = $("#mycanvas")[0];
+		ctx = canvas.getContext("2d");
+		ctx.fillStyle = "#ffffff";
+		ctx.fillRect(0,0,width,height);
+		objs.forEach(drawItem);
+		prts.forEach(drawItem);
     }
 
-    function init()
-    {
-		addObj(width/4,10,bh_Float,[0.2,0.01],"graphic1");
-		addObj(width/2,height/2,bh_Rotate,[0,0,0.10,0.01],"graphic1");
-		addObj(300,10,bh_Fret,[0.2,0.05,0,60],"graphic1");
+    function init(scene)
+    {	
+		switch(scene){
+			case 0:
+				addObj(0,0,bh_None,[0,0,0.10,0.01],"titlepic");
+				addObj(225,30,bh_Rotate,[0,0,0.20,0.01],"titlehead");
+				addObj(51,200,bh_Drip,[240,0,0.10,0.10],"particle");
+				addObj(151,200,bh_Drip,[220,0,0.10,0.10],"particle");
+				addObj(201,200,bh_Drip,[230,0,0.10,0.10],"particle");
+				addObj(311,200,bh_Drip,[260,0,0.10,0.10],"particle");
+				break;
+			case 1:
+				addObj(0,0,bh_None,[0,0,0.10,0.01],"optionspic");
+				addObj(46,35,bh_Float,[0.40,0.01],"angel");
+				addObj(282,55,bh_Float,[0.40,-0.01],"angel");
+				break;
+			case 2:
+				addObj(0,0,bh_None,[0,0,0.10,0.01],"optionspic");
+				addObj(46,35,bh_Float,[0.40,0.01],"demon");
+				addObj(282,55,bh_Float,[0.40,-0.01],"demon");
+				break;
+			case 3:
+				addObj(0,0,bh_None,[0,0,0.10,0.01],"optionspic");
+				addObj(46,35,bh_Float,[0.40,0.01],"demon");
+				addObj(282,55,bh_Float,[0.40,-0.01],"angel");
+				break;
+			case 10:
+				addObj(20,0,bh_None,[0,0,0.10,0.01],"frame1");
+				break;
+			case 11:
+				addObj(20,0,bh_None,[0,0,0.10,0.01],"frame2");
+				break;
+			case 12:
+				addObj(20,0,bh_None,[0,0,0.10,0.01],"frame3");
+				break;
+			case 13:
+				addObj(20,0,bh_None,[0,0,0.10,0.01],"frame4");
+				break;
+			case 14:
+				addObj(20,0,bh_None,[0,0,0.10,0.01],"frame5");
+				break;
+			case 15:
+				addObj(20,0,bh_None,[0,0,0.10,0.01],"frame6");
+				break;
+		}
 		draw();
     }
 
@@ -210,6 +257,12 @@ function Simulation (c) {
 	    
 	}, 8);
     }
+
+	function end(){
+		var objs = [];
+		var prts = [];
+		stop();
+	}
 
     function stop()
     {
@@ -234,17 +287,32 @@ function Simulation (c) {
     return {
 		init: init,
 		start: start,
+		end: end,
 		stop: stop
     };
 
 } // end Simulation
-    
-function start() {
 
+var scenen = 0;
+
+function sceneNum(){
+	return scenen;
+}
+
+function startScene(scene) {
+	
+	scenen = scene;
+	
     var canvas = $("#gamefield")[0];
-    var sim = Simulation(canvas);
+    if (simStarted) {
+		sim.end();
+		sim = Simulation(canvas);
+	}
+	else
+		sim = Simulation(canvas);
+    simStarted = true;
     
-    sim.init();
+    sim.init(scene);
 	sim.start();
 	
     var c = $("#gamefield").on("click", function(event) {

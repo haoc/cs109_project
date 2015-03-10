@@ -4,6 +4,12 @@ var totalguesses = 10;
 
 function diffChange() {
 	hardness = document.getElementById("diffList").value;
+	if (hardness < 2)
+		startScene(1);
+	else if (hardness > 2)
+		startScene(2);
+	else
+		startScene(3);
 }
 function wordChange() {
 	wordsize = document.getElementById("numbList").value;
@@ -486,7 +492,10 @@ function startgame() {
     {
         if(correct == false)
         {
-            numGuesses++;
+			numGuesses++;
+			if(numGuesses%(numGuessesToLose/5) == 0){
+				startScene(sceneNum() + 1);
+			}
             if(numGuesses > numGuessesToLose)
                 numGuesses = numGuessesToLose;
             $("#guesses").html("Guesses Left: " + (numGuessesToLose - numGuesses));
