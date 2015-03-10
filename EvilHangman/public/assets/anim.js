@@ -327,9 +327,9 @@ function startScene(scene) {
 			y = event.clientY - rect.top;
 			var r = 3;
 			var i = 0
-			for(i = 0; i<10; i++){
-				pdeg = pdeg + 0.1*Math.pi;
-				sim.addPrt(x,y,Math.cos(pdeg)*r,Math.sin(pdeg)*r,-Math.cos(pdeg)*r*0.05,-Math.sin(pdeg)*r*0.05,200,"particle");
+			for (i;i<20;i++){
+			pdeg = pdeg + 0.35;
+			sim.addPrt(x,y,Math.cos(pdeg)*r,Math.sin(pdeg)*r,-Math.cos(pdeg)*r*0.05,-Math.sin(pdeg)*r*0.05,40,"particle");
 			}
 		console.log("Canvas was clicked at %f,%f", x, y);
     });

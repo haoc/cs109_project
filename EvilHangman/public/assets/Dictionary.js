@@ -446,9 +446,13 @@ function startgame() {
     });
 
     $('Button').click(function(e){
-        var id = '#' + e.target.id;
-        var letter = id[1];
-        guessEvent(letter, id);
+	if(e.target.id = 'down'){
+	}
+	else{
+        	var id = '#' + e.target.id;
+	        var letter = id[1];
+        	guessEvent(letter, id);
+	}
     });
     
     function check(result, id)
@@ -462,6 +466,7 @@ function startgame() {
                 displayedGameOver = true;
                 alert("YOU SUCK\nword was " + gameDictionary.word());
                 gameOver = true;
+		startgame();
             }
         }
         else
