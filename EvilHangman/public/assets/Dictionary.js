@@ -25,11 +25,11 @@ function Dictionary()
         0->angel           = try to make you win
         1->chaotic angel   = try to make you win + random
         2->normal
-        3->chaotic evil    = tries to make you lose plus random
+        3->chaotic evil    = tries to make you lose + random
         4->evil            = tries to make you lose
     ******************************************************************/
     var difficulty;
-    var DEBUG = true;
+    var DEBUG = false;
     
     function create(wordLength, dif)
     {
@@ -385,21 +385,17 @@ function Dictionary()
 
 // window.onload?
 function startgame() {
+
+    for(var character = 'a'; character <= 'z'; character++)
+    {
+        $('#'+character+'Button').css('color','black');
+    }
+
     var gameOver = false;
     var displayedGameOver = false;
     var gameDictionary = new Dictionary();
     
-//    Returns the word length user selected
-//    var ee = document.getElementById("numbList");
-//    var wordLength = ee.options[ee.selectedIndex].value;
-    
     var wordLength = wordsize;
-    
-    // Returns the difficulty (value) selected
-    // 1 = angel, 2 = chaotic angel, 3 = normal, 4 = chaotic evil, 5 = evil
-//    var e = document.getElementById("diffList");
-//    var difficulty = e.options[e.selectedIndex].value;
-//    console.log(difficulty);
     
     var difficulty = hardness; //0=angel, 1=chaotic angel, 2=normal, 3=chaotic evil, 4=evil
 	console.log(difficulty);
