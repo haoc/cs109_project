@@ -87,7 +87,8 @@ app.config(function($routeProvider){
 
       $routeProvider
           .when('/',{
-                templateUrl: 'homepage.html'          })
+                templateUrl: 'index.html'
+          })
           .when('/game_pages/single_player',{
                 templateUrl: 'game_pages/single_player.html'
           })
